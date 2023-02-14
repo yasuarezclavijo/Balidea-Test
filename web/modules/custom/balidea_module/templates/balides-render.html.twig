@@ -1,0 +1,8 @@
+{% set build_text = {
+  '#type':   'processed_text',
+  '#text':    text_settings.value|t,
+  '#format':  text_settings.format,
+} %}
+
+{{ 'Informative Text'|t }}: {{ build_text }}
+{{ 'Integer'|t }}: {{ integer_settings }}

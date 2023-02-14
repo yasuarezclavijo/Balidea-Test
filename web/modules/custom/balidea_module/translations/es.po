@@ -1,0 +1,52 @@
+
+#: balidea_module.info.yml:0
+msgid "Balidea Module"
+msgstr "Modulo Balidea"
+
+#: balidea_module.info.yml:0
+msgid "Resolve techical test for balidea."
+msgstr "Resuelve prueba tecnica para Balidea."
+
+#: balidea_module.info.yml:0
+msgid "Custom"
+msgstr "Personalizado"
+
+#: balidea_module.links.menu.yml:0
+msgid "Balidea"
+msgstr "Balidea"
+
+#: balidea_module.links.menu.yml:0
+msgid "Settings for Balidea Test."
+msgstr "Ajustes para prueba Balidea"
+
+#: balidea_module.links.task.yml:0
+msgid "Settings"
+msgstr "Configuración"
+
+#: balidea_module.routing.yml:0
+msgid "Settings Balidea"
+msgstr "Ajustes Balides"
+
+#: balidea_module.routing.yml:0
+msgid "Balidea Page"
+msgstr "Página Balidea"
+
+#: config/schema/balidea_module.schema.yml:0
+msgid "Balidea module settings"
+msgstr "Ajustes modulo Balidea"
+
+#: config/schema/balidea_module.schema.yml:0
+msgid "Text"
+msgstr "Texto"
+
+templates/balides-render.html.twig:7
+msgid "Informative Text"
+msgstr "Texto informativo"
+
+#: src/Form/BalideaForm.php:36
+msgid "Title"
+msgstr "Título"
+
+#: src/Form/BalideaForm.php:43
+msgid "Integer"
+msgstr "Número entero"

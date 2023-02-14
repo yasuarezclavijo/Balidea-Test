@@ -1,0 +1,8 @@
+global:
+  css:
+    base:
+      css/style.css: {}
+  js:
+    js/main.js: {}
+  dependencies:
+    - core/once

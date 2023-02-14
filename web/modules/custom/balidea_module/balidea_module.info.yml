@@ -1,0 +1,8 @@
+name: Balidea Module
+description: Resolve techical test for balidea.
+package: Custom
+configure: balidea_module.balidea_settings
+type: module
+core_version_requirement: ^9.2 || ^10
+dependencies:
+  - drupal:config_translation

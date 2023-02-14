@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains balidea_module.module.
+ */
+
+/**
+ * Implements hook_locale_translation_projects_alter().
+ */
+function balidea_module_locale_translation_projects_alter(&$projects) {
+  $module_path = Drupal::service('module_handler')
+    ->getModule('balidea_module')
+    ->getPath();
+  $translation_path = $module_path . '/translations/%language.po';
+  $projects['balidea_module']['info']['interface translation server pattern'] = $translation_path;
+}
+
+/**
+ * Implements template_preprocess_THEMEHOOK().
+ */
+function balidea_module_preprocess_html(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+    $variables['attributes']['class'][] =  $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function balidea_module_theme() {
+  return [
+    'balides_render' => [
+      'variables' => [
+        'text_settings' => NULL,
+        'integer_settings' => NULL,
+      ],
+    ],
+  ];
+}
+
+ /**
+ * Implements hook_page_attachments().
+ */
+function balidea_module_page_attachments(array &$page) {
+  $page['#attached']['drupalSettings']['sitename'] = \Drupal::config('system.site')->get('name');
+}

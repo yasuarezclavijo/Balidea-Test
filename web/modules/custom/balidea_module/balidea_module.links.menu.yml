@@ -1,0 +1,6 @@
+balidea_module.balidea_settings:
+  title: 'Balidea'
+  description: 'Settings for Balidea Test.'
+  route_name: balidea_module.admin_config
+  parent: system.admin_config_system
+  weight: 10

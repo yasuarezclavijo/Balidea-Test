@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions.
+ */
+
+use Drupal\Core\Entity\EntityStorageException;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+
+/**
+ * Implements hook_install().
+ */
+function balidea_module_install($is_syncing) {
+  $menuLink = MenuLinkContent::create([
+    'title' => "Página Balidea",
+    'link' => ['uri' => 'route:balidea_module.controller'],
+    'menu_name' => 'main',
+    'expanded' => FALSE,
+  ]);
+  $menuLink->save();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function balidea_module_uninstall() {
+  $menu_content = Drupal::entityTypeManager()
+    ->getStorage('menu_link_content')
+    ->loadByProperties([
+      'title' => "Página Balidea",
+      'menu_name' => 'main',
+    ]);
+  $menu_content = current($menu_content);
+  try {
+    if (isset($menu_content) && $element = MenuLinkContent::load($menu_content->id())) {
+      $element->delete();
+    }
+  } catch (EntityStorageException $e) {
+    Drupal::logger('Balidea Module')
+      ->warning("There was a problem uninstalling module balidea_module: @error", ["@error" => $e->getMessage()]);
+  }
+
+}

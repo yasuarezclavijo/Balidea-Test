@@ -1,0 +1,14 @@
+balidea_module.admin_config:
+  path: '/admin/balidea'
+  defaults:
+    _form: 'Drupal\balidea_module\Form\BalideaForm'
+    _title: 'Settings Balidea'
+  requirements:
+    _permission: 'administer site configuration'
+balidea_module.controller:
+  path: '/balidea-module/render'
+  defaults:
+    _title: 'Balidea Page'
+    _controller: '\Drupal\balidea_module\Controller\BalideaModuleController::build'
+  requirements:
+    _role: 'authenticated'
