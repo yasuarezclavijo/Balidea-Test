@@ -50,5 +50,5 @@ web/web.config
 .ddev
 .vscode
 .editorconfig
-README.md
+web/README.md
 .gitattributes

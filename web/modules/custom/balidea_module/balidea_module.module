@@ -17,7 +17,7 @@ function balidea_module_locale_translation_projects_alter(&$projects) {
 }
 
 /**
- * Implements template_preprocess_THEMEHOOK().
+ * Implements hook_preprocess_THEMEHOOK().
  */
 function balidea_module_preprocess_html(&$variables) {
   $node = \Drupal::routeMatch()->getParameter('node');
